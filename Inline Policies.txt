@@ -1,0 +1,112 @@
+--> ETLAccesspolicy
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"glue:GetDatabase",
+				"glue:GetDatabases",
+				"glue:GetTable",
+				"glue:GetTables",
+				"glue:GetPartitions",
+				"glue:CreateTable",
+				"glue:UpdateTable",
+				"glue:DeleteTable"
+			],
+			"Resource": "*"
+		}
+	]
+}
+
+
+
+--> GluecatalogPolicy
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"glue:GetDatabase",
+				"glue:GetDatabases",
+				"glue:GetTable",
+				"glue:GetTables",
+				"glue:CreateTable",
+				"glue:UpdateTable",
+				"glue:DeleteTable"
+			],
+			"Resource": "*"
+		}
+	]
+}
+
+
+--> RetailSuperstoreS3Access
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::retail-super-store-data",
+				"arn:aws:s3:::retail-super-store-data/*"
+			]
+		}
+	]
+}
+
+
+--> Glue Catalog Policy
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:GetPartitions",
+        "glue:CreateTable",
+        "glue:UpdateTable",
+        "glue:DeleteTable"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
+
+
+--> QuickSight Access 
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowQuickSightToListAndRead",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "quicksight.amazonaws.com"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::retail-super-store-data",
+        "arn:aws:s3:::retail-super-store-data/*"
+      ]
+    }
+  ]
+}
+
+
+
+
